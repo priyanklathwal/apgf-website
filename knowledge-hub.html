@@ -66,37 +66,128 @@
         </div>
     </section>
 
-    <!-- Filter Bar -->
-    <section class="knowledge-filter-section">
+    <!-- Country Profiles -->
+    <section class="kh-section">
         <div class="container">
-            <div class="knowledge-filters">
-                <button class="filter-btn active" data-filter="all">All</button>
-                <button class="filter-btn" data-filter="publication">Publications</button>
-                <button class="filter-btn" data-filter="article">Articles</button>
+            <div class="kh-section-header">
+                <h2>Country Profiles</h2>
+                <a href="https://aseanenergy.org/knowledge-hub/country" target="_blank" rel="noopener" class="kh-see-more">See more</a>
+            </div>
+            <div class="kh-country-grid">
+                <a href="https://aseanenergy.org/knowledge-hub/country/brunei-darussalam" target="_blank" rel="noopener" class="kh-country-card">
+                    <span class="kh-country-flag">&#127463;&#127479;</span>
+                    <span class="kh-country-name">Brunei Darussalam</span>
+                    <span class="kh-country-arrow">&rarr;</span>
+                </a>
+                <a href="https://aseanenergy.org/knowledge-hub/country/cambodia" target="_blank" rel="noopener" class="kh-country-card">
+                    <span class="kh-country-flag">&#127472;&#127469;</span>
+                    <span class="kh-country-name">Cambodia</span>
+                    <span class="kh-country-arrow">&rarr;</span>
+                </a>
+                <a href="https://aseanenergy.org/knowledge-hub/country/indonesia" target="_blank" rel="noopener" class="kh-country-card">
+                    <span class="kh-country-flag">&#127470;&#127465;</span>
+                    <span class="kh-country-name">Indonesia</span>
+                    <span class="kh-country-arrow">&rarr;</span>
+                </a>
+                <a href="https://aseanenergy.org/knowledge-hub/country/laos" target="_blank" rel="noopener" class="kh-country-card">
+                    <span class="kh-country-flag">&#127473;&#127462;</span>
+                    <span class="kh-country-name">Lao PDR</span>
+                    <span class="kh-country-arrow">&rarr;</span>
+                </a>
+                <a href="https://aseanenergy.org/knowledge-hub/country/malaysia" target="_blank" rel="noopener" class="kh-country-card">
+                    <span class="kh-country-flag">&#127474;&#127486;</span>
+                    <span class="kh-country-name">Malaysia</span>
+                    <span class="kh-country-arrow">&rarr;</span>
+                </a>
+                <a href="https://aseanenergy.org/knowledge-hub/country/myanmar" target="_blank" rel="noopener" class="kh-country-card">
+                    <span class="kh-country-flag">&#127474;&#127474;</span>
+                    <span class="kh-country-name">Myanmar</span>
+                    <span class="kh-country-arrow">&rarr;</span>
+                </a>
+                <a href="https://aseanenergy.org/knowledge-hub/country/philippines" target="_blank" rel="noopener" class="kh-country-card">
+                    <span class="kh-country-flag">&#127477;&#127469;</span>
+                    <span class="kh-country-name">Philippines</span>
+                    <span class="kh-country-arrow">&rarr;</span>
+                </a>
+                <a href="https://aseanenergy.org/knowledge-hub/country/singapore" target="_blank" rel="noopener" class="kh-country-card">
+                    <span class="kh-country-flag">&#127480;&#127468;</span>
+                    <span class="kh-country-name">Singapore</span>
+                    <span class="kh-country-arrow">&rarr;</span>
+                </a>
+                <a href="https://aseanenergy.org/knowledge-hub/country/thailand" target="_blank" rel="noopener" class="kh-country-card">
+                    <span class="kh-country-flag">&#127481;&#127469;</span>
+                    <span class="kh-country-name">Thailand</span>
+                    <span class="kh-country-arrow">&rarr;</span>
+                </a>
+                <a href="https://aseanenergy.org/knowledge-hub/country/viet-nam" target="_blank" rel="noopener" class="kh-country-card">
+                    <span class="kh-country-flag">&#127483;&#127475;</span>
+                    <span class="kh-country-name">Viet Nam</span>
+                    <span class="kh-country-arrow">&rarr;</span>
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- Knowledge Hub Content -->
-    <section class="knowledge-section">
+    <!-- Articles (fetched from ACE API) -->
+    <section class="kh-section kh-section--alt">
         <div class="container">
-            <!-- Featured / Latest -->
-            <div class="knowledge-featured" id="featuredResource">
-                <!-- Populated by JS -->
+            <div class="kh-section-header">
+                <h2>Articles</h2>
+                <a href="https://aseanenergy.org/articles" target="_blank" rel="noopener" class="kh-see-more">See more</a>
             </div>
-
-            <!-- Resource Grid -->
-            <div class="knowledge-grid" id="knowledgeGrid">
-                <!-- Populated by JS -->
+            <div class="kh-card-grid kh-card-grid--3" id="articlesGrid">
+                <div class="knowledge-loading" id="articlesLoading">
+                    <div class="loading-spinner"></div>
+                </div>
             </div>
+        </div>
+    </section>
 
-            <!-- Loading State -->
-            <div class="knowledge-loading" id="knowledgeLoading">
-                <div class="loading-spinner"></div>
-                <p>Loading resources from ASEAN Centre for Energy...</p>
+    <!-- Opinion Editorial -->
+    <section class="kh-section">
+        <div class="container">
+            <div class="kh-section-header">
+                <h2>Opinion Editorial</h2>
+                <a href="https://aseanenergy.org/opinion" target="_blank" rel="noopener" class="kh-see-more">See more</a>
             </div>
+            <div class="kh-card-grid kh-card-grid--3" id="opinionGrid">
+                <div class="knowledge-loading" id="opinionLoading">
+                    <div class="loading-spinner"></div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-            <!-- Source Attribution -->
+    <!-- Official Documents -->
+    <section class="kh-section kh-section--alt">
+        <div class="container">
+            <div class="kh-section-header">
+                <h2>Official Documents</h2>
+                <a href="https://aseanenergy.org/publications?q=&filter=official-documents" target="_blank" rel="noopener" class="kh-see-more">See more</a>
+            </div>
+            <div class="kh-doc-list" id="officialDocsGrid">
+            </div>
+        </div>
+    </section>
+
+    <!-- Publications (fetched from ACE API) -->
+    <section class="kh-section">
+        <div class="container">
+            <div class="kh-section-header">
+                <h2>Publications</h2>
+                <a href="https://aseanenergy.org/publications" target="_blank" rel="noopener" class="kh-see-more">See more</a>
+            </div>
+            <div class="kh-card-grid kh-card-grid--3" id="publicationsGrid">
+                <div class="knowledge-loading" id="publicationsLoading">
+                    <div class="loading-spinner"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Source Attribution -->
+    <section class="kh-section kh-section--alt">
+        <div class="container">
             <div class="knowledge-source">
                 <p>Content sourced from <a href="https://aseanenergy.org/knowledge-hub" target="_blank" rel="noopener">ASEAN Centre for Energy Knowledge Hub</a>. Visit ACE for the complete collection.</p>
             </div>
