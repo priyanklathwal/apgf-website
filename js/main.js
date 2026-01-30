@@ -55,4 +55,77 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
+
+    // News Ticker - Fetch from ASEAN.org RSS feed
+    const tickerContainer = document.getElementById('tickerItems');
+    if (tickerContainer) {
+        fetchTickerNews();
+    }
 });
+
+function fetchTickerNews() {
+    const RSS_URL = 'https://asean.org/feed/';
+    const PROXY_URL = 'https://api.allorigins.win/raw?url=' + encodeURIComponent(RSS_URL);
+    const tickerContainer = document.getElementById('tickerItems');
+
+    fetch(PROXY_URL)
+        .then(function(response) {
+            if (!response.ok) throw new Error('Network error');
+            return response.text();
+        })
+        .then(function(xmlText) {
+            var parser = new DOMParser();
+            var xml = parser.parseFromString(xmlText, 'text/xml');
+            var items = xml.querySelectorAll('item');
+            var headlines = [];
+
+            items.forEach(function(item, index) {
+                if (index >= 15) return;
+                var title = item.querySelector('title') ? item.querySelector('title').textContent : '';
+                var link = item.querySelector('link') ? item.querySelector('link').textContent : '#';
+                if (title) {
+                    headlines.push({ title: title, link: link });
+                }
+            });
+
+            if (headlines.length > 0) {
+                renderTicker(headlines);
+            } else {
+                renderFallbackTicker();
+            }
+        })
+        .catch(function() {
+            renderFallbackTicker();
+        });
+}
+
+function renderTicker(headlines) {
+    var tickerContainer = document.getElementById('tickerItems');
+    var html = '';
+
+    // Duplicate headlines for seamless infinite scroll
+    for (var round = 0; round < 2; round++) {
+        headlines.forEach(function(item, index) {
+            html += '<span class="news-ticker-item">';
+            if (index > 0 || round > 0) {
+                html += '<span class="news-ticker-dot"></span>';
+            }
+            html += '<a href="' + item.link + '" target="_blank" rel="noopener">' + item.title + '</a>';
+            html += '</span>';
+        });
+    }
+
+    tickerContainer.innerHTML = html;
+}
+
+function renderFallbackTicker() {
+    var fallback = [
+        { title: 'ASEAN Power Grid targets full integration by 2045', link: '#' },
+        { title: '17.6 GW cross-border capacity goal set for 2040', link: '#' },
+        { title: 'APGF launched at 42nd ASEAN Ministers on Energy Meeting', link: '#' },
+        { title: 'USD 800 billion in potential savings from energy integration', link: '#' },
+        { title: 'PACE partnership brings together multilateral banks and private financiers', link: '#' },
+        { title: '10 ASEAN Member States working towards shared energy future', link: '#' }
+    ];
+    renderTicker(fallback);
+}
