@@ -11,7 +11,16 @@
       "Bash(export PATH=\"/opt/homebrew/bin:$PATH\")",
       "Bash(git init:*)",
       "Bash(git add:*)",
-      "Bash(git commit:*)"
+      "Bash(git commit:*)",
+      "Bash(/opt/homebrew/bin/gh repo create apgf-website --public --source=. --push)",
+      "Bash(/opt/homebrew/bin/gh api repos/priyanklathwal/apgf-website/pages -X POST -f build_type=legacy -f source='{\"\"branch\"\":\"\"master\"\",\"\"path\"\":\"\"/\"\"}')",
+      "Bash(curl:*)",
+      "Bash(dig:*)",
+      "Bash(/opt/homebrew/bin/gh api repos/priyanklathwal/apgf-website/pages -X PUT --input - 2)",
+      "Bash(1 <<'EOF'\n{\"https_enforced\":true,\"source\":{\"branch\":\"master\",\"path\":\"/\"}}\nEOF)",
+      "Bash(/opt/homebrew/bin/gh api repos/priyanklathwal/apgf-website/pages)",
+      "Bash(git push:*)",
+      "Bash(/opt/homebrew/bin/gh api repos/priyanklathwal/apgf-website/pages/builds/latest)"
     ]
   }
 }
