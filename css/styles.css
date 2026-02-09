@@ -699,6 +699,11 @@ img {
     object-fit: contain;
 }
 
+.partner-logo-item img[src*="ASEAN"] {
+    border-radius: 50%;
+    height: 50px;
+}
+
 .partner-logo-item img[src*="adb"] {
     height: 50px;
 }
@@ -1592,13 +1597,18 @@ img {
     object-fit: contain;
 }
 
+.footer-logos-strip img[src*="ASEAN"] {
+    border-radius: 50%;
+    height: 45px;
+}
+
 .footer-logos-strip img[src*="adb"] {
     height: 45px;
 }
 
 .footer-content {
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr 1fr;
+    grid-template-columns: 2fr 1fr 1fr 1.5fr;
     gap: var(--space-3xl);
     padding: var(--space-3xl) 0;
 }
@@ -1649,6 +1659,12 @@ img {
 .footer-links a:hover {
     opacity: 1;
     color: var(--bg-white);
+}
+
+.footer-contact-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-lg);
 }
 
 .footer-contact p {
@@ -1832,6 +1848,11 @@ img {
 
     .footer-logos-strip img {
         height: 35px;
+    }
+
+    .footer-contact-columns {
+        grid-template-columns: 1fr;
+        gap: var(--space-sm);
     }
 
     .partner-logos-row {
