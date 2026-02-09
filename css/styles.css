@@ -255,6 +255,23 @@ img {
     background: var(--accent-blue);
 }
 
+.nav-links a.nav-cta {
+    background: var(--accent-blue);
+    color: var(--bg-white);
+    padding: var(--space-sm) var(--space-lg);
+    border-radius: 4px;
+    font-weight: 600;
+}
+
+.nav-links a.nav-cta:hover {
+    background: var(--primary-blue);
+    color: var(--bg-white);
+}
+
+.nav-links a.nav-cta::after {
+    display: none;
+}
+
 .has-dropdown > a::after {
     display: none;
 }
@@ -1742,6 +1759,12 @@ img {
     .nav-links a {
         padding: var(--space-md) 0;
         border-bottom: 1px solid var(--border-light);
+    }
+
+    .nav-links a.nav-cta {
+        text-align: center;
+        border-bottom: none;
+        margin-top: var(--space-sm);
     }
 
     .mobile-menu-btn {
